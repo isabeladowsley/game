@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="scriptStructure.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles.css">
+        <title>TraveLearn</title>
+
+    </head>
+    <body>
+        <div id="game-container">
+
+                <div id="question">
+                        <h1 id="question-text"></h1>
+                        <form id="form">
+                            <input type="radio" id="input1"/>
+                            <input type="radio" id="input2"/>
+                            <input type="radio" id="input3"/>
+                        </form>  
+
+                        <a href="#" onclick="return show('Question1','Question2');">Previous Question</a>
+                        <a id="checkbtn" href="#" >Check Answer</a>
+                        <a id="nextbtn" href="#" onclick="return show('Question2','Question1');">Next Question</a>
+                </div>
+
+            
+            
+
+
+
+        </div>
+    </body>
+
+
+
+</html>
+       
