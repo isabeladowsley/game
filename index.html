@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <script type="text/javascript" src="script.js"></script>
         <script type="text/javascript" src="scriptStructure.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel="stylesheet" href="styles.css">
         <title>TraveLearn</title>
 
@@ -18,21 +18,17 @@
 
                 <div id="question">
                         <h1 id="question-text"></h1>
+                        <img id="question-img" src="">
                         <form id="form">
-                            <input type="radio" id="input1"/>
-                            <input type="radio" id="input2"/>
-                            <input type="radio" id="input3"/>
+                            <input type="radio" id="input1" name="country" value="input1"><label id="label1" for="input1"></label>
+                            <input type="radio" id="input2" name="country" value="input2"><label id="label2" for="input2"></label>
+                            <input type="radio" id="input3" name="country" value="input3"><label id="label3" for="input3"></label>
                         </form>  
 
-                        <a href="#" onclick="return show('Question1','Question2');">Previous Question</a>
+                        <a id="previousbtn" href="#">Previous Question</a>
                         <a id="checkbtn" href="#" >Check Answer</a>
-                        <a id="nextbtn" href="#" onclick="return show('Question2','Question1');">Next Question</a>
+                        <a id="nextbtn" href="#">Next Question</a>
                 </div>
-
-            
-            
-
-
 
         </div>
     </body>

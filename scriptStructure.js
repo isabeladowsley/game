@@ -1,10 +1,12 @@
 
 var pointsScored = 0;
-var input1 = document.getElementById('input1')
+var quiz = [];
+var currentQuestion = 0;
+
 function QuizQuestion () {
     this.question,
     this.image,
-    this.input1 = "",
+    this.input1,
     this.input2,
     this.input3,
     this.correctAnswer,
@@ -12,20 +14,41 @@ function QuizQuestion () {
     this.explanation
 }
 
+QuizQuestion.prototype.appendText = function () {
+    document.getElementById("question-text").innerHTML = this.question;
+    document.getElementById("label1").innerHTML = this.input1;
+    document.getElementById("label2").innerHTML = this.input2;
+    document.getElementById("label3").innerHTML = this.input3;
+    debugger
+    }
+    
+
+QuizQuestion.prototype.addImage =  function () {
+    var img = document.getElementById("question-img");
+    img.src = this.image;
+    img.width = 500;
+    img.height = 260;
+}
+
 QuizQuestion.prototype.checkAnswer = function () {
-    document.getElementById("checkbtn").addEventListener("click", function () {
-        if(document.getElementsByTagName(form).checked.innerHTML = this.correctAnswer) {
+    var correctAnswer = this.correctAnswer;
+    var explanation = this.explanation;
+    $('#checkbtn').click(function() { 
+        debugger
+        if ($("input[type=radio][checked]").val() === correctAnswer){
             alert ("You did it! :)");
-            alert (this.explanation);
+            alert (explanation);
             pointsScored +=1 ; 
-            return true;
-        } else if (document.getElementsByTagName(form).checked.innerHTML != this.correctAnswer) {
+            console.log(pointsScored);
+            return true;      
+        } else if ($("input[type=radio][checked]").val() !== correctAnswer){
+            debugger
             alert ("Well wrong answer! Let's try again on the next question");
-            alert (this.explanation);
+            alert (explanation);
             return false;
         } 
     })
-};
+}
 
 QuizQuestion.prototype.checkIfSelected = function () {
     document.getElementById("checkbtn").addEventListener("click", function () {
@@ -35,26 +58,45 @@ QuizQuestion.prototype.checkIfSelected = function () {
           alert ("You must select a button");
           return false;
         }
-    })
-};
+    });
+}
 
-QuizQuestion.prototype.appendText = function () {
-    // $("#question-text").append(this.question)
-    document.getElementById("question-text").innerHTML = this.question;
-    // $("#input1").html(this.input1);
-    // $('#input1').val(this.input1);
-    document.getElementById("input1").innerHTML = this.input1;
-    document.getElementById("input2").innerHTML = this.input2;
-    document.getElementById("input3").innerHTML = this.input3;
-    }
-    
+QuizQuestion.prototype.checkIfSelected = function () {
+
+}
+
+QuizQuestion.prototype.nextPage = function () {
+    document.getElementById('nextbtn').addEventListener("click", function () {
+    for (i=0 ; i < quiz.length; i++) {
+        quiz[i].style.display = 'none';
+        quiz[i + 1].style.display = 'block'
+        }
+    });
+}
+
+QuizQuestion.prototype.previousPage = function () {
+    document.getElementById('previousbtn').addEventListener("click", function () {
+    for (i=0 ; i < quiz.length; i++) {
+        console.log('you did!');
+        quiz[i].style.display = 'none';
+        quiz[i - 1].style.display = 'block'
+        }
+    });
+}
 
 
 
-
-// $("#input1").attr('value', this.input1);
-// $("#input2").attr('value', `${this.input2}`);
-// $("#input2").attr('value', `${this.input3}`);
+//     $('#btn').click(function(){
+//         $(quiz.get(currentQuestion)).fadeOut(function(){
+//             currentQuestion = currentQuestion + 1;
+//             if(currentQuestion == 20){
+//                    alert("You have scored "+ poinstScores + " out of 20");
+//             }else{
+//             $($questions.get(currentQuestion)).fadeIn();
+//             }
+//     });
+// });
+// }
 
 // QuizQuestion.prototype.checkDiffficulty = function () {
 // };

@@ -10,7 +10,8 @@ form {
 }
 
 input {
-    position: relative;
+    position: flex;
+    flex-direction: row;
     width: 100%;
 }
 
