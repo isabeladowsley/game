@@ -1,6 +1,14 @@
 body {
     color: black;
+    margin-top: 5%;
+    font-family: 'Monserrat', sans-serif;
+    background-color: rgb(159, 190, 223)
 }
+
+h1 {
+    font-size: 24px;
+}
+
 
 form {
     width: 100%;
@@ -15,3 +23,24 @@ input {
     width: 100%;
 }
 
+.btn {
+   margin: 5%;
+   padding: 10px;
+   font-size: 14px;
+}
+
+#gamecontainer {
+    display: flex;
+    flex-direction: row;
+}
+
+#question{
+    float: left;
+   margin-left: 15%;
+}
+
+#scoretable {
+    float: right;
+    margin-right: 15%;
+    margin-top: 15%;
+}
