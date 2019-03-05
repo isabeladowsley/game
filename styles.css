@@ -2,26 +2,21 @@ body {
     color: black;
     margin-top: 5%;
     font-family: 'Monserrat', sans-serif;
-    background-color: rgb(159, 190, 223)
+    background-color: rgb(0, 26, 51);
+    color: white;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 30px;
+    text-align: center;
 }
 
 
-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    color: black;
-}
 
 input {
-    position: flex;
-    flex-direction: row;
     width: 100%;
 }
+
 
 .btn {
    margin: 5%;
@@ -29,18 +24,8 @@ input {
    font-size: 14px;
 }
 
-#gamecontainer {
-    display: flex;
-    flex-direction: row;
-}
-
-#question{
-    float: left;
-   margin-left: 15%;
-}
-
 #scoretable {
     float: right;
-    margin-right: 15%;
-    margin-top: 15%;
+    margin-right: 10%;
+    margin-top: 10%;
 }

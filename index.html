@@ -6,35 +6,43 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">       
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="scriptStructure.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="bootbox.min.js"></script>
+        <script src="bootbox.locales.min.js"></script>
         <title>TraveLearn</title>
 
     </head>
     <body>
-        <div id="game-container">
-            <div id="question">
+    <div id="game-container" class='container'>
+        <div class='row'>
+            <div id="question" class="col col-lg-6" >
                 <h1 id="question-text"></h1>
-                <img class="photo" id="question-img" src="" width= 640px height=426px>
-                <form id="form">
-                    <input type="radio" id="input1" name="country" value="input1"><label id="label1" for="input1"></label>
-                    <input type="radio" id="input2" name="country" value="input2"><label id="label2" for="input2"></label>
-                    <input type="radio" id="input3" name="country" value="input3"><label id="label3" for="input3"></label>
+                <img class="img-rounded" id="question-img" src="" width= 640px height=426px>
+                <form id="form" class="form-group">
+                    <div id='answer1'><input type="radio" id="input1" name="country" value="input1"><label id="label1" for="input1"></label></div>
+                    <div id='answer2'><input type="radio" id="input2" name="country" value="input2"><label id="label2" for="input2"></label></div>
+                    <div id='answer3'><input type="radio" id="input3" name="country" value="input3"><label id="label3" for="input3"></label></div>
                 </form>  
-                <button id="previousbtn" href="#" type="button" class="btn btn-info">Previous Question</button>
-                <button id="checkbtn" href="#" class="btn btn-secondary">Check Answer</button>
-                <button id="nextbtn" href="#" type="button" class="btn btn-info">Next Question</button>
+                <button id="previousbtn" href="#" type="button" class="btn btn-lg btn-info" data-dismiss="alert">Previous Question</button>
+                <button id="checkbtn" href="#" class="btn btn-lg btn-secondary" data-dismiss="alert">Check Answer</button>
+                <button id="nextbtn" href="#" type="button" class="btn btn-lg btn-info" data-dismiss="alert">Next Question</button>
+                <div id = "alert_placeholder"></div>
             </div>
-            <div id="scoretable">
+            <div class="w-100"></div>
+            <div id="countdown"></div>
+            <div id="scoretable" class="col col-lg-3 btn btn-info" >
                 <h1>Your score: </h1>
                 <h1 id="points"></h1>
             </div>
         </div>
+    </div>
     </body>
-    <script type="text/javascript" src="scriptStructure.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   
 
 </html>
        
