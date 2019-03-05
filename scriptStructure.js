@@ -43,19 +43,17 @@ var wrongBeep = new Audio("./src/sounds/wrong.wav");
 
 QuizGame.prototype.checkAnswer = function () {
 
-    bootstrap_alert = function() {}
-    bootstrap_alert.warning = function(message) {
-                $('#alert_placeholder').html('<div class="alert"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
-            }
+    $('.alert').show();
 
     if ($("input[type=radio]:not(:checked)").length === 3) {
         wrongBeep.play();
-        bootstrap_alert.warning("You must select one country");
+        $('#alert1').addClass('alert-danger').text('You must select one country');
+  
       return false;
     } else  if ($("input[type=radio]:checked").val() === this.questions[this.index].correctAnswer) {
         correctBeep.play();
-        alert("You did it! :)");
-        alert(this.questions[this.index].explanation);
+        $('#alert1').removeClass('alert-danger').addClass('alert-success').text("You did it!");
+        $('#alert2').addClass('alert-light').text(this.questions[this.index].explanation);
         
         if (this.questions[this.index].difficultylabel === 1) {
             this.pointsScored += 1;
@@ -66,40 +64,52 @@ QuizGame.prototype.checkAnswer = function () {
         else if (this.questions[this.index].difficultylabel === 3) {
             this.pointsScored += 3;
         }   
+        $('#checkbtn').prop('disabled', true);
         return true;
       } else if ($("input[type=radio]:checked").val() != this.questions[this.index].correctAnswer) {
         wrongBeep.play();
-        alert("Well wrong answer! Let's try again on the next question");
-        alert(this.questions[this.index].explanation);
+        $('#alert1').addClass('alert-danger').text("Well wrong answer! Let's try again on the next question");
+        $('#alert2').addClass('alert-light').text(this.questions[this.index].explanation);
+        $('#checkbtn').prop('disabled', true);
         return false;
       }
+      
   }
-
 
  
   //   Timer setup
-  var timeleft = 10;
 
-  var timer = setInterval(function(){
-          document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
-          timeleft -= 1;
-          if(timeleft <= 0){
-          clearInterval(timer);
-          document.getElementById("countdown").innerHTML = "Your time has ended!"
+var timeleft = 10;
+
+var counter = setInterval(myTimer, 1000);
+
+function myTimer () {
+    document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+    timeleft -= 1;
+    if(timeleft <= 0){
+         document.getElementById("countdown").innerHTML = "Your time has ended!"
           $("input[type=radio]").attr('disabled', true);
-          }
-      }, 1000);
-     
+    }      
+}
 
-      
+function myStopFunction() {
+    clearInterval(counter);
+}
+
 
  // Next Page Button
 
  
  function nextPage (game) {
     document.getElementById("nextbtn").addEventListener("click", function() {
+        $("input[type=radio]").attr('disabled', false);
+        $('.alert').hide();
+        $('#checkbtn').prop('disabled', false);
         game.questions[game.index + 1].showQuestion();
         game.index++;
+        myStopFunction();
+        timeleft = 10;
+        counter = setInterval(myTimer, 1000);        
   });
 };
 

@@ -1,31 +1,92 @@
+html {
+    font-size: 10px;
+}
+
 body {
     color: black;
-    margin-top: 5%;
+    margin-top: 2%;
     font-family: 'Monserrat', sans-serif;
     background-color: rgb(0, 26, 51);
     color: white;
 }
 
 h1 {
-    font-size: 30px;
     text-align: center;
+    font-size: 2rem;
+    padding: 1%
 }
 
+p {
+    font-size: 1.6rem;
+    padding: 1%
+}
 
+label {
+    margin: 1rem;
+    font-size: 1.4rem;
+}
 
-input {
+.btn {
+    margin: 2%;
+   padding: 1rem;
+   font-size: 1.4em;
+   align-content: middle;
+}
+
+#rules {
+    background-color: gray;
+    margin-bottom: 3%;
+}
+
+#countdown {
+    text-align: center;
+    font-size: 2rem;
+}
+
+#scoretable {
+    width: 100%;
+    align-items: center;
+    margin-top: 5%;
+}
+
+#alert1 {
+    font-size: 1.4rem;
+    margin-top: 5%;
+    width: 100%;
+}
+
+#alert2 {
+    font-size: 1.4rem;
+    margin-top: 5%;
     width: 100%;
 }
 
 
-.btn {
-   margin: 5%;
-   padding: 10px;
-   font-size: 14px;
-}
 
-#scoretable {
-    float: right;
-    margin-right: 10%;
-    margin-top: 10%;
-}
+/* Extra small devices (phones) */
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 6px;
+    }
+} 
+
+/* Small devices (portrait tablets) */
+@media only screen and (max-width: 992px) {
+   html {
+        font-size: 6px;
+    }
+} 
+
+/* Medium devices (landscape tablets) */
+@media only screen and (max-width: 1200px) {
+    html {
+        font-size: 10px;
+    }
+} 
+
+/* Large devices (laptops/desktops) */
+@media only screen and (min-width: 1200px) {
+    html {
+        font-size: 10px;
+    }
+} 

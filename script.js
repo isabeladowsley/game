@@ -4,13 +4,6 @@ window.onload = function() {
 
     // Creating my questions\
 
-// var rules = {
-//     rule1:"The game has 20 questions",
-//     rule2:"You must select at least one country",
-//     rule3: "You have 10 seconds to answer each question"
-//     };
-
-//     document.getElementById("game-rules").innerHTML = rules;
 
   var question1 = new QuizQuestion(
     "From which country is this dish?",

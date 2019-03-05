@@ -12,32 +12,47 @@
         <script type="text/javascript" src="scriptStructure.js"></script>
         <script type="text/javascript" src="script.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="bootbox.min.js"></script>
-        <script src="bootbox.locales.min.js"></script>
-        <title>TraveLearn</title>
+
+        <title>Trave & Learn</title>
 
     </head>
     <body>
     <div id="game-container" class='container'>
+        <div id="rules" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1>Game Rules</h1>
+                <p>
+                . The game has 20 questions about different cultural and geographical topics<br>
+                . You have 10 seconds to answer each question, adn press the "Check Answer" button<br>
+                . There are three levels of questions: <br>
+                    -Easy gives you 1 points <br>
+                    -Mediumd gives you 2 points<br>
+                    -Difficult gives you 3 points <br>         
+                </p>
+        </div>
         <div class='row'>
-            <div id="question" class="col col-lg-6" >
-                <h1 id="question-text"></h1>
-                <img class="img-rounded" id="question-img" src="" width= 640px height=426px>
+            <div id="question" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <h1 id="question-text" class=></h1>
+                <img class="img-fluid rounded" id="question-img" src="" width= 640px height=426px>
                 <form id="form" class="form-group">
                     <div id='answer1'><input type="radio" id="input1" name="country" value="input1"><label id="label1" for="input1"></label></div>
                     <div id='answer2'><input type="radio" id="input2" name="country" value="input2"><label id="label2" for="input2"></label></div>
                     <div id='answer3'><input type="radio" id="input3" name="country" value="input3"><label id="label3" for="input3"></label></div>
                 </form>  
-                <button id="previousbtn" href="#" type="button" class="btn btn-lg btn-info" data-dismiss="alert">Previous Question</button>
-                <button id="checkbtn" href="#" class="btn btn-lg btn-secondary" data-dismiss="alert">Check Answer</button>
-                <button id="nextbtn" href="#" type="button" class="btn btn-lg btn-info" data-dismiss="alert">Next Question</button>
-                <div id = "alert_placeholder"></div>
+                <div class='row'>
+                    <button id="previousbtn" href="#" type="button" class="btn btn-lg btn-info" data-dismiss="alert">Previous Question</button>
+                    <button id="checkbtn" href="#" class="btn btn-lg btn-secondary" data-dismiss="alert">Check Answer</button>
+                    <button id="nextbtn" href="#" type="button" class="btn btn-lg btn-info" data-dismiss="alert">Next Question</button>
+                </div>
+                
             </div>
-            <div class="w-100"></div>
-            <div id="countdown"></div>
-            <div id="scoretable" class="col col-lg-3 btn btn-info" >
-                <h1>Your score: </h1>
-                <h1 id="points"></h1>
+            <div id="info" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div id='alert1' class="alert alert-dismissable" role="alert"></div>
+                    <div id='alert2' class="alert alert-dismissable" role="alert"></div>   
+                    <div id="countdown"></div>
+                    <div id="scoretable" class="btn btn-info" >
+                        <h1>Your score: </h1>
+                        <h1 id="points"></h1>
+                    </div>        
             </div>
         </div>
     </div>
