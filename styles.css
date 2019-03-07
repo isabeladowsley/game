@@ -1,23 +1,26 @@
 html {
     font-size: 10px;
+    
 }
 
 body {
     color: black;
     margin-top: 2%;
-    font-family: 'Monserrat', sans-serif;
+    font-family: 'Karla', sans-serif;
     background-color: rgb(0, 26, 51);
     color: white;
+    height: 100%;
+    width: 100%;
 }
 
 h1 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.4rem;
     padding: 1%
 }
 
 p {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     padding: 1%
 }
 
@@ -33,9 +36,47 @@ label {
    align-content: middle;
 }
 
+#hello {
+    height: 1600px;
+    width: 2000px;
+    background-image: url("./src/images/land.jpg");
+    background-size: cover;
+    background-position: center; 
+    background-size: cover;
+    margin-left: 0;
+    position: relative;
+    margin: -15% 0 0 -35%;
+}
+
+#hellobtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 10%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+    font-size: 3rem;
+}
+
 #rules {
-    background-color: gray;
-    margin-bottom: 3%;
+    height: 1600px;
+    width: 2000px;
+    background-image: url("./src/images/blackboard.jpg");
+    background-size: cover;
+    margin: -5% 0 0 -30%;
+    position: relative;
+}
+
+#rulestext {
+    height: 1600px;
+    width: 2000px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    height: 10%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+   
 }
 
 #countdown {
@@ -73,7 +114,7 @@ label {
 /* Small devices (portrait tablets) */
 @media only screen and (max-width: 992px) {
    html {
-        font-size: 6px;
+        font-size: 8px;
     }
 } 
 

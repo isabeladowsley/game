@@ -33,22 +33,67 @@ QuizGame.prototype.updatePointsTable = function() {
     document.getElementById("points").innerHTML = this.pointsScored;
 }
 
+// Timer
+
+var counter;
+var timeleft;
+
+function myTimer() {
+  document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+  timeleft -= 1;
+  if (timeleft <= 0) {
+    document.getElementById("countdown").innerHTML = "Your time has ended!"
+    $("input[type=radio]").attr('disabled', true);
+  }
+};
+
+
+function myStopFunction() {
+  clearInterval(counter);
+}
+
 // Sound effects
 
 var correctBeep = new Audio("./src/sounds/correct.wav"); 
 var wrongBeep = new Audio("./src/sounds/wrong.wav"); 
+var nextBeep = new Audio('./src/sounds/next.wav');
+
+
+// First pages
+
+QuizGame.prototype.load = function () {
+  $("#hello").show();
+  $("#rules").hide();
+  $("#quiz").hide();
+}
+
+QuizGame.prototype.hello = function () {
+  $("#hellobtn").click(function() {
+    nextBeep.play();
+    $("#hello").hide();
+    $("#rules").show();
+});
+};
+
+QuizGame.prototype.start = function (game) {
+  $("#startbtn").click(function() {
+    nextBeep.play();
+    $("#rules").hide();
+    $("#quiz").show();
+    game.questions[0].showQuestion();
+    timeleft = 10;
+    counter = setInterval(myTimer, 1000);   
+    });    
+};
 
 
 // Check Button
 
 QuizGame.prototype.checkAnswer = function () {
-
     $('.alert').show();
-
     if ($("input[type=radio]:not(:checked)").length === 3) {
         wrongBeep.play();
         $('#alert1').addClass('alert-danger').text('You must select one country');
-  
       return false;
     } else  if ($("input[type=radio]:checked").val() === this.questions[this.index].correctAnswer) {
         correctBeep.play();
@@ -73,35 +118,13 @@ QuizGame.prototype.checkAnswer = function () {
         $('#checkbtn').prop('disabled', true);
         return false;
       }
-      
   }
-
- 
-  //   Timer setup
-
-var timeleft = 10;
-
-var counter = setInterval(myTimer, 1000);
-
-function myTimer () {
-    document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
-    timeleft -= 1;
-    if(timeleft <= 0){
-         document.getElementById("countdown").innerHTML = "Your time has ended!"
-          $("input[type=radio]").attr('disabled', true);
-    }      
-}
-
-function myStopFunction() {
-    clearInterval(counter);
-}
-
 
  // Next Page Button
 
- 
  function nextPage (game) {
     document.getElementById("nextbtn").addEventListener("click", function() {
+        nextBeep.play();
         $("input[type=radio]").attr('disabled', false);
         $('.alert').hide();
         $('#checkbtn').prop('disabled', false);
@@ -121,16 +144,3 @@ function myStopFunction() {
     });
   };
 
-
-//   Countdown function 
-
-
-QuizGame.prototype.counter = function () {
-  setInterval(alertFunc, 10000);
-    function alertFunc () {
-    alert('Time is over');
-    $("input[type=radio]").attr('disabled', true);
-};
-};
-
- 
