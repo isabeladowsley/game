@@ -103,10 +103,10 @@ label {
     font-size: 1.8rem;
 }
 
-#alert3 {
-    background-image: url("./src/images/meme.jpg");
+.ui-dialog {
+    align-items: center;
+    vertical-align: middle;
 }
-
 
 
 /* Extra small devices (phones) */

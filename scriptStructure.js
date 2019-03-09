@@ -123,10 +123,10 @@ QuizGame.prototype.checkAnswer = function () {
 
  // Next Page Button
 
- var game = new QuizGame
+
  function nextPage (game) {
     document.getElementById("nextbtn").addEventListener("click", function() {
-      if (game.index <= 19) {
+      if (game.index < 19) {
         nextBeep.play();
         $("input[type=radio]").attr('disabled', false);
         $('.alert').hide();
@@ -137,10 +137,26 @@ QuizGame.prototype.checkAnswer = function () {
         timeleft = 10;
         counter = setInterval(myTimer, 1000);   
       } else {
-        $('#alert3').dialog();
-        }  
-  });
+        $('#nextbtn').prop('disabled', true);
+        $('#alert3').dialog({
+          height: 700,
+          width: 700,
+          dialogClass: "no-close",
+          buttons: [
+            {
+              text: "OK",
+              click: function() {
+                $( this ).dialog( "close" );
+              }
+            }
+          ]
+        });
+
+
+        }
+      });   
 };
+
 
 // Previous Page Button
    function previousPage (game) {
