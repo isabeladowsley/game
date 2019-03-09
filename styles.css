@@ -112,15 +112,46 @@ label {
 /* Extra small devices (phones) */
 @media only screen and (max-width: 768px) {
     html {
-        font-size: 6px;
+    font-size: 6px;
     }
-} 
+    #hello {
+    width: 500px;   
+    height: auto;
+    } 
+    #hellobtn {
+    left: 57%;
+    height: 20%;
+    top: 30%;
+    }
+    #rules {
+    width: 150%;   
+    height: 1400px;
+    margin: -5% 0 0 -5%;
+    }
+    #rulestext {
+    width: 500px;   
+    height: 1400px;
+    margin-top: -45%;
+    margin-left: -45%;
+    }
+}
 
 /* Small devices (portrait tablets) */
 @media only screen and (max-width: 992px) {
    html {
         font-size: 8px;
     }
+    #hello {
+        width: 150%;   
+        height: 1200px;
+    } 
+
+    #rulestext {
+        width: 60%;   
+        height: 1200px;
+        left: 50%;
+        right: 50%;
+        }
 } 
 
 /* Medium devices (landscape tablets) */
