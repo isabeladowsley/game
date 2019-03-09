@@ -80,6 +80,7 @@ QuizGame.prototype.start = function (game) {
     nextBeep.play();
     $("#rules").hide();
     $("#quiz").show();
+    $('#alert3').hide();
     game.questions[0].showQuestion();
     timeleft = 10;
     counter = setInterval(myTimer, 1000);   
@@ -122,17 +123,22 @@ QuizGame.prototype.checkAnswer = function () {
 
  // Next Page Button
 
+ var game = new QuizGame
  function nextPage (game) {
     document.getElementById("nextbtn").addEventListener("click", function() {
+      if (game.index <= 19) {
         nextBeep.play();
         $("input[type=radio]").attr('disabled', false);
         $('.alert').hide();
         $('#checkbtn').prop('disabled', false);
-        game.questions[game.index + 1].showQuestion();
         game.index++;
+        game.questions[game.index].showQuestion();
         myStopFunction();
         timeleft = 10;
-        counter = setInterval(myTimer, 1000);        
+        counter = setInterval(myTimer, 1000);   
+      } else {
+        $('#alert3').dialog();
+        }  
   });
 };
 
@@ -143,4 +149,6 @@ QuizGame.prototype.checkAnswer = function () {
         game.index--;
     });
   };
+
+
 

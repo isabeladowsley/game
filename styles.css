@@ -88,18 +88,23 @@ label {
     width: 100%;
     align-items: center;
     margin-top: 5%;
+    font-size: 2.0rem;
 }
 
 #alert1 {
-    font-size: 1.4rem;
     margin-top: 5%;
     width: 100%;
+    font-size: 2.0rem;
 }
 
 #alert2 {
-    font-size: 1.4rem;
     margin-top: 5%;
     width: 100%;
+    font-size: 1.8rem;
+}
+
+#alert3 {
+    background-image: url("./src/images/meme.jpg");
 }
 
 
